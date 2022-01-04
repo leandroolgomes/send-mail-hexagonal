@@ -1,12 +1,5 @@
-import ports.config
-import ports.http_server
-import ports.db
-import ports.mail
+import components
 
-components = {}
-components['config'] = ports.config.start()
-components['db'] = ports.db.start(components=components)
-components['mail'] = ports.mail.start(components=components)
-components['http_server'] = ports.http_server.start(components=components)
+components.load_components()
 
 print('STARTED!')
